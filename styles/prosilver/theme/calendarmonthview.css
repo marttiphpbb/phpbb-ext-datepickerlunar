@@ -1,0 +1,153 @@
+div.datepickerlunar div.datepickerlunar-panel table
+{
+	border-collapse: collapse;
+	font-size: 1.3em;
+	color: #008;
+	width: 100%;
+	border-spacing: 5px 5px;
+	table-layout: fixed;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+ 	text-align: left;
+}
+
+div.datepickerlunar div.datepickerlunar-panel table div
+{
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.datepickerlunar table tbody td span.mday
+{
+	font-size: 1.3em;
+	color: #222277;
+}
+
+div.datepickerlunar table tbody td.blur span.mday
+{
+	color: #eee;
+}
+
+.moon
+{
+	cursor: default;
+	font-size: 8px;
+}
+
+.moon span
+{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.isoweek
+{
+	font-style: italic;
+	font-size: 0.5em;
+	float: right;
+	clear: right;
+	padding-right: 5px;
+}
+
+td.blur .isoweek
+{
+	color: #ddd;
+}
+
+div.datepickerlunar table td > div
+{
+	margin: -3px 3px;
+	padding: 0 7px;
+	height: 1.5em;
+	width: auto;
+}
+
+div.datepickerlunar table td > div > span
+{
+	font-size: .7em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	text-align: left;
+}
+
+div.datepickerlunar td.mon div,
+div.datepickerlunar td.tue div,
+div.datepickerlunar td.wed div,
+div.datepickerlunar td.thu div,
+div.datepickerlunar td.fri div
+{
+	background-color: #f0f8ff;
+	color: #333355;
+}
+
+div.datepickerlunar td.sat div,
+div.datepickerlunar td.sun div
+{
+	background-color: #daecfb;
+	color: #333355;
+}
+
+div.datepickerlunar td.today div
+{
+	background-color: #cadceb;
+	color: #333355;
+}
+
+div.datepickerlunar td.blur div
+{
+	background-color: #fff;
+	color: #ddd;
+}
+
+div.datepickerlunar table tbody tr:first-child td > div
+{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	margin-top: 3px;
+}
+
+div.datepickerlunar table tbody tr:last-child td > div
+{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-bottom: 3px;
+}
+
+div.datepickerlunar table tbody tr td:first-child div
+{
+	margin-left: 0;
+}
+
+div.datepickerlunar table tbody tr td:last-child div
+{
+	margin-right: 0;
+}
+
+.evt div
+{
+	height: auto;
+}
+
+.evt  div a
+{
+	height: 100%;
+}
+
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px)
+{
+	div.datepickerlunar div.moon > span
+	{
+		display: none;
+	}
+	div.datepickerlunar td > div > span
+	{
+		display: none;
+	}
+	div.datepickerlunar td div.isoweek
+	{
+		display: none;
+	}
+}
