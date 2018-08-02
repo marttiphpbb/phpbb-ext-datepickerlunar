@@ -170,6 +170,7 @@ $.datepicker._updateDatepicker = function(inst) {
 
 	function getHtmlMoon(day, phaseRender){
 		var html = '<span class="fa-stack marttiphpbb-datepickerlunar" ';
+		html += 'title="' + day + '" ';
 		html += 'data-day="' + day + '">';
 		html += '<i class="fa fa-circle fa-inverse fa-stack-1x"></i>';
 		html += '<i class="fa ';

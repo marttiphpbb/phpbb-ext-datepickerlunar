@@ -3,5 +3,7 @@ span.marttiphpbb-datepickerlunar
 	height: .8em;
 	width: .8em;
 	line-height: .8em;
-	color: black;
+	color: #444;
+	display: table;
+	margin: auto;
 }
