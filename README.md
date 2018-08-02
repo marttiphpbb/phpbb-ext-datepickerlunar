@@ -1,6 +1,16 @@
 # phpBB Extension - marttiphpbb Datepicker Lunar (helper ext)
 
-This phpBB extension provides a /// for the [Calendar Input extension](https://github.com/marttiphpbb/phpbb-ext-calendarinput)
+This phpBB extension shows the phases of the moon for the [JQuery UI Datepicker extension](https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker)
+
+## Screenshot
+
+![datepicker](doc/datepicker.png)
+
+## Requirements
+
+* phpBB 3.2.1+
+* PHP 7.1+
+* [JQuery UI Datepicker extension](https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker)
 
 ## Quick Install
 
