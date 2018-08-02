@@ -11,6 +11,7 @@ This phpBB extension shows the phases of the moon for the [JQuery UI Datepicker 
 * phpBB 3.2.1+
 * PHP 7.1+
 * [JQuery UI Datepicker extension](https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker)
+* [Font Awesome Icons](https://fontawesome.com/) (Is present in Prosilver)
 
 ## Quick Install
 
