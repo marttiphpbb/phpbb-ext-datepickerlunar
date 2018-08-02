@@ -1,5 +1,7 @@
 # phpBB Extension - marttiphpbb Datepicker Lunar (helper ext)
 
+[Topic on phpBB.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2481086)
+
 This phpBB extension shows the phases of the moon for the [JQuery UI Datepicker extension](https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker)
 
 ## Screenshot
