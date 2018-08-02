@@ -2,10 +2,6 @@ services:
     marttiphpbb.datepickerlunar.listener:
         class: marttiphpbb\datepickerlunar\event\listener
         arguments:
-            - '@language'
             - '@user'
         tags:
             - { name: event.listener }
-
-    marttiphpbb.datepickerlunar.calc:
-        class: marttiphpbb\datepickerlunar\util\calc

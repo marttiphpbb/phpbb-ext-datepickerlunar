@@ -7,32 +7,37 @@
 
 namespace marttiphpbb\datepickerlunar\event;
 
-use phpbb\language\language;
 use phpbb\user;
-use marttiphpbb\datepickerlunar\util\calc;
 use phpbb\event\data as event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	protected $language;
-	protected $calc;
+	protected $user;
 
-	public function __construct(language $language, user $user)
+	public function __construct(user $user)
 	{
-		$this->language = $language;
 		$this->user = $user;
 	}
 
 	static public function getSubscribedEvents()
 	{
 		return [
-			'marttiphpbb_jqueryuidatepicker' => ''
+			'marttiphpbb.jqueryuidatepicker' => 'load',
 		];
 	}
 
-	public function core_posting_modify_template_vars(event $event)
+	public function load(event $event)
 	{
+		$context = $event['context'];
 
+		$datetime = $this->user->create_datetime();
+
+		$context['marttiphpbb_datepickerlunar'] = [
+			'offset'	=> $datetime->getOffset(),
+			'time_utc'	=> $datetime->getTimestamp(),
+		];
+
+		$event['context'] = $context;
 	}
 }

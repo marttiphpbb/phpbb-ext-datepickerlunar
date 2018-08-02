@@ -119,11 +119,9 @@ $.datepicker._findMoonPhases = function(unixStart, unixEnd){
 		if (phaseTime >= startJd){
 			phase = Math.floor(4 * phase);
 
-			var d = new Date(Math.round((phaseTime - 2440587.5) * 86400000));
-
 			phases.push({
 				"phase": phaseName[phase],
-				"day": d.getUTCDate(),
+				"unix": Math.round((phaseTime - 2440587.5) * 86400)
 			});
 		}
 	}
@@ -141,6 +139,8 @@ $.datepicker._updateDatepickerParent = $.datepicker._updateDatepicker;
 $.datepicker._updateDatepicker = function(inst) {
 	this._updateDatepickerParent(inst);
 
+	var $s = $('#marttiphpbb_datepickerlunar');
+	var tzOffset = $s.data('offset');
 	const moonRender = {
 		"new": "fa-circle",
 		"1st": "fa-adjust fa-rotate-180",
@@ -151,16 +151,16 @@ $.datepicker._updateDatepicker = function(inst) {
 	var $td10 = $td.eq(10);
 	var year = $td10.data('year');
 	var month = $td10.data('month');
-	var start = new Date(year, month, 0, 0, 0, 0);
-	var end = new Date(year, month + 1, 0, 0, 0, 0);
-	var phases = this._findMoonPhases(start.getTime() / 1000, (end.getTime() / 1000) - 1);
-	var phase = phases.shift();
+	var start = (Date.UTC(year, month, 1) / 1000) - tzOffset;
+	var end = (Date.UTC(year, month + 1, 0, 23, 59) / 1000) - tzOffset;
+	var phases = this._findMoonPhases(start, end);
+	var phase = shiftOnePhase();
 
 	$td.each(function(){
 		var $this = $(this);
 		var day = $this.text();
 		if (phase && day > phase.day){
-			phase = phases.shift();
+			phase = shiftOnePhase();
 		}
 		if (phase && day == phase.day){
 			var render = moonRender[phase.phase];
@@ -179,5 +179,13 @@ $.datepicker._updateDatepicker = function(inst) {
 		return html;
 	}
 
-	console.log("Injected Custom Method");
+	function shiftOnePhase(){
+		var phase = phases.shift();
+		if (!phase){
+			return false;
+		}
+		var d = new Date((phase.unix + tzOffset) * 1000);
+		phase.day = d.getUTCDate();
+		return phase;
+	}
 }

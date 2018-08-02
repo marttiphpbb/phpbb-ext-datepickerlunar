@@ -1,2 +1,6 @@
 {%- INCLUDEJS '@marttiphpbb_datepickerlunar/js/lunar.js' -%}
 {%- INCLUDECSS '@marttiphpbb_datepickerlunar/lunar.css' -%}
+{%- if marttiphpbb_datepickerlunar -%}
+    <span id="marttiphpbb_datepickerlunar" data-offset="{{- marttiphpbb_datepickerlunar.offset -}}" data-time-utc="{{- marttiphpbb_datepickerlunar.time_utc -}}">
+    </span>
+{%- endif -%}
