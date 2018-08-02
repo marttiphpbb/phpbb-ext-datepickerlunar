@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Datepicker Lunar Extension for phpBB 3.2",
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-datepickerlunar",
-	"version": "0.1.0",
-	"time": "2018-07-31",
+	"version": "0.2.0",
+	"time": "2018-08-02",
 	"keywords": ["phpbb", "extension", "jqueryui", "lunar", "moon"],
 	"license": "GPL-2.0",
 	"authors": [{
