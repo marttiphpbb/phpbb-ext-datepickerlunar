@@ -180,6 +180,9 @@ $.datepicker._updateDatepicker = function(inst) {
 	}
 
 	function shiftOnePhase(){
+		if (!phases){
+			return false;
+		}
 		var phase = phases.shift();
 		if (!phase){
 			return false;
